@@ -1,0 +1,10 @@
+#!name=Apple WLOC定位修改
+#!desc=劫持gs-loc.apple.com，修改苹果WiFi辅助定位，需要开启HTTPS解密
+#!type=script
+#!system=shadowrocket
+
+[MITM]
+hostname=gs-loc.apple.com
+
+[Script]
+wloc,http-request,^https?://gs-loc\.apple\.com/clls/wloc,requires-body=true,script-path=https://wloc-tgxzs2.zck567765.workers.dev/clls/wloc
